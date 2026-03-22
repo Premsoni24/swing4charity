@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/golfDB')
+mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log("DB connected"));
 
 app.use("/auth", require("./routes/auth"));
