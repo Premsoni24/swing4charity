@@ -5,7 +5,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
 
   const login = async () => {
-    const res = await axios.post("http://localhost:5000/auth/login", { email });
+    const res = await axios.post("https://swing4charity.onrender.com/auth/login", {...});
     localStorage.setItem("user", JSON.stringify(res.data));
     window.location.href = "/dashboard";
   };
